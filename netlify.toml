@@ -1,6 +1,7 @@
 [build]
   command = "npm install"
-  publish = "."  # Deploys the whole backend
+  functions = "functions"  # Tells Netlify to look for serverless functions
+
 
 [build.environment]
   NODE_VERSION = "18"
