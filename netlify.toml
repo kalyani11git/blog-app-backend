@@ -1,20 +1,11 @@
 [build]
-  command = "npm install && npm run build"
-  functions = "functions"
-  publish = "public"
+  command = "npm install"
+  publish = "."  # Deploys the whole backend
 
 [build.environment]
   NODE_VERSION = "18"
 
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/server/:splat"
+  from = "/*"
+  to = "/.netlify/functions/server"
   status = 200
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
-
-[[plugins]]
-  package = "@netlify/plugin-functions-install-core"
