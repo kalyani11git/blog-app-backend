@@ -3,9 +3,6 @@
   functions = "functions"  # Tells Netlify to look for serverless functions
 
 
-[build.environment]
-  NODE_VERSION = "18"
-
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/server"
