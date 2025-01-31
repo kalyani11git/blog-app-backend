@@ -1,0 +1,20 @@
+[build]
+  command = "npm install && npm run build"
+  functions = "functions"
+  publish = "public"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/server/:splat"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
